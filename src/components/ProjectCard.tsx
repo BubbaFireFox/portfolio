@@ -2,36 +2,29 @@ import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group relative flex flex-col rounded-lg border border-neutral-800 bg-neutral-950 p-6 transition-colors hover:border-neutral-600">
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="text-lg font-medium text-neutral-100">{project.name}</h3>
+    <article className="group border border-[var(--line)] bg-[var(--panel)] p-5 transition-colors hover:border-[var(--amber)]">
+      <div className="flex items-baseline justify-between gap-4">
+        <h3 className="text-[var(--fg)]">
+          <span className="text-[var(--dim)]">drwxr-xr-x </span>
+          <span className="text-[var(--amber)] group-hover:underline">{project.name}/</span>
+        </h3>
         {project.featured && (
-          <span className="shrink-0 rounded-full border border-neutral-700 px-2 py-0.5 text-xs text-neutral-400">
-            Featured
-          </span>
+          <span className="shrink-0 text-xs text-[var(--green)]">★ pinned</span>
         )}
       </div>
 
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-400">
-        {project.description}
-      </p>
+      <p className="mt-3 text-sm leading-relaxed text-[var(--fg)]">{project.description}</p>
 
-      <ul className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[var(--dim)]">
         {project.tags.map((tag) => (
-          <li key={tag} className="rounded bg-neutral-900 px-2 py-1 text-xs text-neutral-500">
-            {tag}
-          </li>
+          <span key={tag}>#{tag.toLowerCase().replace(/\s+/g, "-")}</span>
         ))}
-      </ul>
+      </div>
 
-      <div className="mt-6 flex gap-4 text-sm">
-        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="text-neutral-300 underline-offset-4 hover:text-neutral-100 hover:underline">
-          Source
-        </a>
+      <div className="mt-4 flex gap-4 text-sm">
+        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="text-[var(--green)] underline-offset-4 hover:underline">./source</a>
         {project.liveUrl && (
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-neutral-300 underline-offset-4 hover:text-neutral-100 hover:underline">
-            Live
-          </a>
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-[var(--green)] underline-offset-4 hover:underline">./live</a>
         )}
       </div>
     </article>
