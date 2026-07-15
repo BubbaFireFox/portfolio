@@ -26,17 +26,8 @@ export default function Home() {
       </section>
 
       <footer className="mt-14 flex gap-5 text-sm">
-        
-          href="https://github.com/YOURUSERNAME"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[var(--green)] hover:underline"
-        >
-          github
-        </a>
-        <a href="mailto:you@example.com" className="text-[var(--green)] hover:underline">
-          email
-        </a>
+        <a href="https://github.com/BubbaFireFox" target="_blank" rel="noopener noreferrer" className="text-[var(--green)] hover:underline">github</a>
+        <a href="mailto:kirkpatton3@gmail.com" className="text-[var(--green)] hover:underline">email</a>
       </footer>
     </main>
   );
