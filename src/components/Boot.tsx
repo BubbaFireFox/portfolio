@@ -10,31 +10,32 @@ const LINES = [
 ];
 
 export default function Boot() {
-  const [shown, setShown] = useState<string[]>([]);
+  const [count, setCount] = useState(0);
   const [done, setDone] = useState(false);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
-      setShown(LINES);
+      setCount(LINES.length);
       setDone(true);
       return;
     }
-    let i = 0;
     const id = setInterval(() => {
-      setShown((s) => [...s, LINES[i]]);
-      i += 1;
-      if (i >= LINES.length) {
-        clearInterval(id);
-        setDone(true);
-      }
+      setCount((c) => {
+        const next = c + 1;
+        if (next >= LINES.length) {
+          clearInterval(id);
+          setDone(true);
+        }
+        return next;
+      });
     }, 450);
     return () => clearInterval(id);
   }, []);
 
   return (
     <div className="space-y-1 text-sm leading-relaxed">
-      {shown.map((line, idx) => {
+      {LINES.slice(0, count).map((line, idx) => {
         const isPrompt = line.startsWith("kirkp@");
         return (
           <p key={idx} className={isPrompt ? "text-[var(--amber)]" : "text-[var(--fg)]"}>
