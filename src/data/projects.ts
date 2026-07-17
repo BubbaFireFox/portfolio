@@ -19,6 +19,16 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "hypixel-rng-meter-planner",
+    name: "Hypixel RNG Meter Planner",
+    description:
+      "Single-file, offline web app that does the RNG-meter math for Hypixel SkyBlock: enter the rare drops you want and it computes what to put your meter on, in what order, and which drops you'll collect by farming — minimizing total runs. Authoritative required-XP for all 484 drops across 23 sources, published base rates, an honest “is it even worth it?” verdict, and a vanilla-JS engine with inline unit tests. No build step, no dependencies, no server.",
+    repoUrl: "https://github.com/BubbaFireFox/hypixel-rng-meter-planner",
+    liveUrl: "https://bubbafirefox.github.io/hypixel-rng-meter-planner/",
+    tags: ["Vanilla JS", "Single-file", "Offline-first", "Game Tools"],
+    featured: true,
+  },
+  {
     slug: "cigarvault",
     name: "CigarVault",
     description: "Cigar collection and humidor tracking app. React Native + Next.js monorepo, Postgres backend.",
