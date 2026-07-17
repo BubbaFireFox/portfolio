@@ -28,13 +28,5 @@ export const projects: Project[] = [
     tags: ["Vanilla JS", "Single-file", "Offline-first", "Game Tools"],
     featured: true,
   },
-  {
-    slug: "cigarvault",
-    name: "CigarVault",
-    description: "Cigar collection and humidor tracking app. React Native + Next.js monorepo, Postgres backend.",
-    repoUrl: "https://github.com/YOURUSERNAME/cigarvault",
-    tags: ["React Native", "Next.js", "Postgres"],
-    featured: true,
-  },
   // add the rest
 ];
