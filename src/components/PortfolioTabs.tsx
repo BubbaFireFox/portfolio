@@ -78,6 +78,7 @@ export default function PortfolioTabs() {
         {tab === "about" && (
           <article className="border border-[var(--line)] bg-[var(--panel)] p-6">
             <p className="text-sm text-[var(--amber)]">{about.role}</p>
+            <p className="mt-1 text-xs text-[var(--dim)]">{about.education}</p>
             {about.paragraphs.map((p, i) => (
               <p key={i} className="mt-3 text-sm leading-relaxed text-[var(--fg)]">
                 {p}
